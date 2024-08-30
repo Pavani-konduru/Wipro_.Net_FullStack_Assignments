@@ -1,0 +1,69 @@
+Day 14
+Date:- 23-08-2024
+                         Graph Algorithm
+                       ~~~~~~~~~~~~~~~~~~~
+Graphs:
+********
+--> A graph can be defined as group of vertices and edges that are used to connect these vertices. 
+--> A graph can be seen as a cyclic tree, where the vertices (Nodes) maintain any complex relationship among them instead of having parent child relationship.
+--> A graph G can be defined as an ordered set G(V, E) where V(G) represents the set of vertices and E(G) represents the set of edges which are used to connect these vertices.
+
+Components of a Graph:
+---------------------
+Vertices: Vertices are the basic units of the graph used to represent real-life objects, persons, or entities. Sometimes, vertices are also known as Nodes.
+Edges: Edges are drawn or used to connect two vertices of the graph. Sometimes, edges are also known as Arcs.
+
+Types of Graphs:
+----------------
+The Graphs can be categorized into two types:
+
+	1. Undirected Graph
+	2. Directed Graph
+Undirected Graph:- 
+-----------------
+	A Graph with edges that do not have a direction is termed an Undirected Graph. The edges of this graph imply a two-way relationship in which each edge can be traversed in both directions. 
+Directed Graph: 
+---------------
+	A Graph with edges with direction is termed a Directed Graph. The edges of this graph imply a one-way relationship in which each edge can only be traversed in a single direction.
+
+What are Weighted Graphs?
+--------------------------
+A Graph is said to be Weighted if each edge is assigned a 'weight'. The weight of an edge can denote distance, time, or anything that models the 'connection' between the pair of vertices it connects.
+
+Dijkstra Algorithm:-
+*********************
+* Dijkstra's Algorithm is a Graph algorithm that finds the shortest path from a source vertex to all other vertices in the Graph (single source shortest path). 
+* It is a type of Greedy Algorithm that only works on Weighted Graphs having positive weights. 
+* The time complexity of Dijkstra's Algorithm is O(V2) with the help of the adjacency matrix representation of the graph. 
+* This time complexity can be reduced to O((V + E) log V) with the help of an adjacency list representation of the graph.
+* where V is the number of vertices and E is the number of edges in the graph.
+
+--> This is the single source shortest path problem.
+--> if we have a weighted graph is given inside that we have to find the smallest or shortest path from one starting vertex (node) to all other vetex (nodes).
+--> The smallest or shortest path can be direct to the vertex (node) or that can be indirect means having selected multiple nodes.
+--> Since we are finding the smallest path. so, this is a minimization problem.
+--> Minimization is a optimization problem.
+--> Optimization problem can be solved by greedy method.
+--> Greedy method says that a problem must be solved in stages by taking one step at a time, that includes one input at a time.
+--> we will get an optimization solution.
+--> In greedy we have procedure defined and by use of that we will gonna get the optimize solution.
+
+Source Node (or) Vertex:-
+--------------------------
+--> Starting node for finding the shortest or smallest path.
+--> Any node from the graph can be the source or starting vertex.
+
+Relaxation:-
+-----------
+      This is the discarding of the largest value with a small value when we are coming from indirect node or vertex to find the shortest path.
+
+Drawback:
+---------
+Drawback of this algorithm--> For Negative value of weighted graph tis algorithm may or may not work.
+
+Dynamic Approach:
+-----------------
+	A Graph in which we have the cycle this dynamic approach will be better to find the smallest or shortest path.
+	To calculate the smallest or shortest path between two pair of nodes or vertex.
+
+

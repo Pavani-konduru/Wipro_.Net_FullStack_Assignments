@@ -1,0 +1,76 @@
+
+Day-15
+Date: 26-08-2024                     Graph Algorithms
+                                    ~~~~~~~~~~~~~~~~~~
+
+Kruskal Algorithm:
+*******************
+Minimum Spanning Time(MTS):
+
+Minimum Spanning tree - Minimum spanning tree can be defined as the spanning tree in which the sum of the weights of the edge is minimum. The weight of the spanning tree is the sum of the weights given to the edges of the spanning tree.
+
+Kruskal's Algorithm is used to find the minimum spanning tree for a connected weighted graph. The main target of the algorithm is to find the subset of edges by using which we can traverse every vertex of the graph. It follows the greedy approach that finds an optimum solution at every stage instead of focusing on a global optimum.
+
+** Kruskal’s algorithm to find the minimum cost spanning tree uses the greedy approach. The Greedy Choice is to pick the smallest weight edge that does not cause a cycle in the MST constructed so far.
+** A minimum spanning tree (MST) or minimum weight spanning tree for a weighted, connected, undirected graph is a spanning tree with a weight less than or equal to the weight of every other spanning tree.
+** In Kruskal’s algorithm, sort all edges of the given graph in increasing order. Then it keeps on adding new edges and nodes in the MST if the newly added edge does not form a cycle. It picks the minimum weighted edge at first and the maximum weighted edge at last.
+** Thus we can say that it makes a locally optimal choice in each step in order to find the optimal solution. Hence this is a Greedy Algorithm.
+
+Spanning tree - A spanning tree is the subgraph of an undirected connected graph.
+
+--> Vertices or Nodes and Edge
+--> Get the subgraph from a graph. The subgraph we can called the spanning tree.
+--> A MTS for a weighted, connected, in directed graph is a spanning tree with a weight less than or equal to the weight of every other spanning tree.\
+--> Spanning tree must contains all the Nodes or vertices inside it.
+--> Sort all edges of the given graph in increasing order.
+--> Keep adding new edges and node in the MST only. if the newly added edge does not form a cycle.
+--> we will gonna pick the minimum edge weight add first and the maximum in the Last.
+
+Prims:
+*********
+Prim's Algorithm is a greedy algorithm that is used to find the minimum spanning tree from a graph. Prim's algorithm finds the subset of edges that includes every vertex of the graph such that the sum of the weights of the edges can be minimized.
+
+Prim's algorithm starts with the single node and explores all the adjacent nodes with all the connecting edges at every step. The edges with the minimal weights causing no cycles in the graph got selected.
+
+Prim's algorithm is a greedy algorithm that starts from one vertex and continue to add the edges with the smallest weight until the goal is reached. The steps to implement the prim's algorithm are given as follows -
+
+First, we have to initialize an MST with the randomly chosen vertex.
+Now, we have to find all the edges that connect the tree in the above step with the new vertices. From the edges found, select the minimum edge and add it to the tree.
+Repeat step 2 until the minimum spanning tree is formed.
+
+-->Select the First minimum weight edge from the graph and then select the connected edge that have the minimum weight and this step until all the nodes are traversed.
+
+The applications of prim's algorithm are -
+
+Prim's algorithm can be used in network designing.
+It can be used to make network cycles.
+It can also be used to lay down electrical wiring cables.
+
+Bellman Ford Algorithm:
+*******************************
+Bellman-Ford is a single source shortest path algorithm that determines the shortest path between a given source vertex and every other vertex in a graph. This algorithm can be used on both weighted and unweighted graphs.
+
+** This algorithm is used to find the shortest distance from the single vertex to all the other vertices of a weighted graph. 
+** There are various other algorithms used to find the shortest path like Dijkstra algorithm, etc. If the weighted graph contains the negative weight values, then the Dijkstra algorithm does not confirm whether it produces the correct answer or not.
+** In contrast to Dijkstra algorithm, bellman ford algorithm guarantees the correct answer even if the weighted graph contains the negative weight values.
+
+Rule of this algorithm
+-----------------------
+We will go on relaxing all the edges (n - 1) times where,  
+n = number of vertices   
+
+--> Bellman Ford Algorithm is a Single source Shortest path Algorithm.
+--> It will give the shortest path between a given node or vertex and every other vertex in the graph.
+--> This algorithm can be used with weighted and unweighted graphs.
+--> Dijkstra Algorithm which may or may not work with Negative weighted value for the edge to overcome this we have this Bellman Ford Algorithm.
+--> This can handle the negative values in the graph.
+--> After selecting the single node from where we have to start apart from this all other path we will consider infinity by default.
+--> This is little slower than Dijkstra Algorithm.
+
+Relaxation:
+-----------
+--> This graph have N node or Vertex, All other edges will be released N-1 times to find the shortest path.
+
+
+
+

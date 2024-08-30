@@ -1,0 +1,114 @@
+Day-16
+Date:- 28-08-2024
+                   Understanding and implementing Multithreading
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Bitwise:
+*********
+* Bitwise algorithm in DS involve modification of individual bit of binary representations of a number.
+* Integer value-->like 6 into binary representations
+* & ---> Bitwise AND operator
+* | ---> Bitwise OR operator
+* ^ ---> Exclusive OR operator
+* ~ ---> Unary operator
+* << ---> Left Shift operator
+* >> ---> Right Shift operator
+
+Bitwise AND operator(&):
+*************************
+it will give a value of 1 when both bit are set or both bit are 1.AND operator will give 1 for all other combination it will be 0.
+Eg:-    6--->0110
+	4--->0100
+     6&4---->0100(4)
+
+Bitwise OR operator(|):
+************************
+If any of the bit is set or 1 then the output will be 1 otherwise 0
+Eg:- 	6--->0110
+	4--->0100
+      6|4--->0110(6)
+
+Bitwise Exclusive OR operator(^):
+**********************************
+If we have both bit are same the bit will give a value of 1 otherwise 0
+Eg:- 	6--->0110
+	4--->0100
+      6^4--->1101(13)
+
+
+Bitwise Complement operator(~):
+*********************************
+It takes only one input and bits are reversed (1 becomes 0, 0 becomes 1)
+Eg:- 	6--->0110------>o/p:- 1001=9
+	4--->0100------>o/p:- 1011=11
+
+
+Bit Value-->(0,1)
+A	B	A&B	A|B	A^B
+0	0	0	 0	 1
+0	1	0	 1	 0
+1	0	0	 1	 0	
+1	1	1	 1	 1
+
+Shift Operators:-
+*****************
+Left Shift operator:
+---------------------
+--->it will shifts the bits to the left Number of shift will depend upon the input.
+-->n-> Number of shift that we have to perform
+-->operand <<n
+-->operand <<3
+6---> 0110 --->(6<<3 = 0110000)
+
+Right Shift operator:
+----------------------
+--->it will shifts the bits to the Right Number of shift will depend upon the input.
+-->n-> Number of shift that we have to perform
+-->operand >> n
+-->operand >> 2
+6---> 0110 --->(6>>2 = 0001)
+7---> 0111 --->0001
+
+Multithreading in C#:
+***********************
+Multithreading in C# is a process in which multiple threads work simultaneously. It is a process to achieve multitasking. It saves time because multiple tasks are being executed at a time. To create multithreaded application in C#, we need to use System.Threding namespace.
+
+Process and Thread
+-------------------
+--> A process represents an application whereas a thread represents a module of the application. 
+--> Process is heavyweight component whereas thread is lightweight. 
+--> A thread can be termed as lightweight subprocess because it is executed inside a process.
+--> Whenever you create a process, a separate memory area is occupied. But threads share a common memory area.
+
+Process---> Process is used to facilitate the execution of a program by providing the resource required.
+Each process is having a unique id associated with it.
+A process can have multiple thread.
+
+Thread:
+-------
+Its a light weight process. A process have at least one thread which we called main thread. this Thread executes the application.
+
+Advantages:
+-----------
+--> To maintain a responsive user interface -->10 seconds (1 thread)
+--> multiple thread --> 5 thread --> 2 seconds
+--> we can execute multiple methods parallelly which takes some time to execute
+
+Disadvantages:
+--------------
+we have to write many lines of codes to perform the same functionality.
+--> multithread application are hard to debug.
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
