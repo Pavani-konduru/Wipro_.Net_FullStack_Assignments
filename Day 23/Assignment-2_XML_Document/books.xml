@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bookstore>
+  <book>
+    <title>Harry Potter</title>
+    <author>John Doe</author>
+    <price>290.95</price>
+  </book>
+  <book>
+    <title>Believe in Yourself</title>
+    <author>Joseph Murphy</author>
+    <price>190.95</price>
+  </book>
+  <book>
+    <title>Learning LINQ</title>
+    <author>John Doe</author>
+    <price>389.95</price>
+  </book>
+</bookstore>
