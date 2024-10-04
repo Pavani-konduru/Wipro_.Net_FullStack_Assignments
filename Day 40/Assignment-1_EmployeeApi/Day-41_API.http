@@ -1,0 +1,6 @@
+@Day_41_API_HostAddress = http://localhost:5180
+
+GET {{Day_41_API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
