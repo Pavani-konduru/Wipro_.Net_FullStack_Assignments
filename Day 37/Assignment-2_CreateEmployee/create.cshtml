@@ -1,0 +1,98 @@
+﻿@model EmployeeManagement.Models.Employee
+
+@{
+    ViewData["Title"] = "Create Employee";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Reference to your layout
+}
+
+<h2>Create Employee</h2>
+
+@using (Html.BeginForm("Create", "Employee", FormMethod.Post))
+{
+    <div class="row mb-3">
+        <!-- First Name, Middle Name, Last Name -->
+        <div class="col-md-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", required = "required", @id = "firstName" })
+                @Html.LabelFor(model => model.FirstName, new { @for = "firstName" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.MiddleName, new { @class = "form-control", @id = "middleName" })
+                @Html.LabelFor(model => model.MiddleName, new { @for = "middleName" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.LastName, new { @class = "form-control", required = "required", @id = "lastName" })
+                @Html.LabelFor(model => model.LastName, new { @for = "lastName" })
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <!-- Salary, Phone, Email -->
+        <div class="col-md-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.Salary, new { @class = "form-control", required = "required", type = "number", @id = "salary" })
+                @Html.LabelFor(model => model.Salary, new { @for = "salary" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control", required = "required", @id = "phone" })
+                @Html.LabelFor(model => model.PhoneNumber, new { @for = "phone" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", required = "required", type = "email", @id = "email" })
+                @Html.LabelFor(model => model.Email, new { @for = "email" })
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <!-- Address, Country, Age -->
+        <div class="col-md-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.Address, new { @class = "form-control", required = "required", @id = "address" })
+                @Html.LabelFor(model => model.Address, new { @for = "address" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-floating">
+                @Html.DropDownListFor(model => model.Country, new SelectList(new[] { "USA", "CAN", "UK", "AUS", "IND" }), "Select your country", new { @class = "form-select", required = "required", @id = "country" })
+                @Html.LabelFor(model => model.Country, new { @for = "country" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.Age, new { @class = "form-control", required = "required", type = "number", @id = "age" })
+                @Html.LabelFor(model => model.Age, new { @for = "age" })
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <!-- Date of Birth -->
+        <div class="col-md-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.DateOfBirth, new { @class = "form-control", required = "required", type = "date", @id = "dob" })
+                @Html.LabelFor(model => model.DateOfBirth, new { @for = "dob" })
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="row mb-3">
+        <div class="col">
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

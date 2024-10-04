@@ -1,0 +1,30 @@
+﻿@model IEnumerable<EmployeeManagement.Models.Employee>
+
+@{
+    ViewData["Title"] = "Employee List";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Reference to your layout
+}
+
+<h2>Employee List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@($"{employee.FirstName} {employee.MiddleName} {employee.LastName}")</td>
+                <td>@employee.Email</td>
+                <td>@employee.PhoneNumber</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create")" class="btn btn-primary">Create Employee</a>
