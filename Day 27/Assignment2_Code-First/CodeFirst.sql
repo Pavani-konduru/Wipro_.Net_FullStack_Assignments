@@ -1,0 +1,5 @@
+SELECT TOP (1000) [MigrationId]
+      ,[ContextKey]
+      ,[Model]
+      ,[ProductVersion]
+  FROM [employeeData].[dbo].[__MigrationHistory]
