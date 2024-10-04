@@ -1,0 +1,60 @@
+<div class="container mt-4">
+    <h1>Create Employee</h1>
+    <form>
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" [(ngModel)]="employee.firstName" name="firstName" required />
+      </div>
+      <div class="mb-3">
+        <label for="middleName" class="form-label">Middle Name</label>
+        <input type="text" class="form-control" [(ngModel)]="employee.middleName" name="middleName" />
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" [(ngModel)]="employee.lastName" name="lastName" required />
+      </div>
+      <div class="mb-3">
+        <label for="dob" class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" [(ngModel)]="employee.dob" name="dob" required />
+      </div>
+      <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <select class="form-select" [(ngModel)]="employee.country" name="country" required>
+          <option value="" disabled selected>Select your country</option>
+          <option value="India">India</option>
+          <option value="United States">United States</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="Canada">Canada</option>
+          <option value="Australia">Australia</option>
+          <option value="Germany">Germany</option>
+          <option value="France">France</option>
+          <option value="Japan">Japan</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input type="number" class="form-control" [(ngModel)]="employee.age" name="age" min="1" max="120" required />
+      </div>
+      <div class="mb-3">
+        <label for="department" class="form-label">Department</label>
+        <input type="text" class="form-control" [(ngModel)]="employee.department" name="department" required />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email ID</label>
+        <input type="email" class="form-control" [(ngModel)]="employee.email" name="email" required />
+      </div>
+    </form>
+  
+    <h2 class="mt-4">Employee Details:</h2>
+    <div>
+      <p>First Name: {{ employee.firstName }}</p>
+      <p>Middle Name: {{ employee.middleName }}</p>
+      <p>Last Name: {{ employee.lastName }}</p>
+      <p>Date of Birth: {{ employee.dob }}</p>
+      <p>Country: {{ employee.country }}</p>
+      <p>Age: {{ employee.age }}</p>
+      <p>Department: {{ employee.department }}</p>
+      <p>Email: {{ employee.email }}</p>
+    </div>
+  </div>
+  
