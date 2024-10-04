@@ -1,0 +1,117 @@
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="text-center">{{ index !== null ? 'Edit Employee' : 'Create Employee' }}</h2>
+            <form #employeeForm="ngForm" (ngSubmit)="onSubmit()" class="mt-4" novalidate>
+                
+                <!-- First Name, Middle Name, Last Name -->
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" id="firstName" [(ngModel)]="employee.firstName" name="firstName" required class="form-control" #firstName="ngModel" />
+                            <label for="firstName">First Name</label>
+                            <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="text-danger">First name is required.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" id="middleName" [(ngModel)]="employee.middleName" name="middleName" class="form-control" />
+                            <label for="middleName">Middle Name</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" id="lastName" [(ngModel)]="employee.lastName" name="lastName" required class="form-control" #lastName="ngModel" />
+                            <label for="lastName">Last Name</label>
+                            <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="text-danger">Last name is required.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Date of Birth, Country, Age -->
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="date" id="dob" [(ngModel)]="employee.dob" name="dob" required class="form-control" #dob="ngModel" />
+                            <label for="dob">Date of Birth</label>
+                            <div *ngIf="dob.invalid && (dob.dirty || dob.touched)" class="text-danger">Date of birth is required.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <select id="country" [(ngModel)]="employee.country" name="country" required class="form-select" #country="ngModel">
+                                <option value="" disabled selected>Select your country</option>
+                                <option value="USA">United States</option>
+                                <option value="CAN">Canada</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="AUS">Australia</option>
+                                <option value="IND">India</option>
+                                <option value="GER">Germany</option>
+                            </select>
+                            <label for="country">Country</label>
+                            <div *ngIf="country.invalid && (country.dirty || country.touched)" class="text-danger">Country is required.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="number" id="age" [(ngModel)]="employee.age" name="age" required class="form-control" #age="ngModel" />
+                            <label for="age">Age</label>
+                            <div *ngIf="age.invalid && (age.dirty || age.touched)" class="text-danger">Age is required.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email, Phone, Address -->
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="email" id="email" [(ngModel)]="employee.email" name="email" required class="form-control" #email="ngModel" />
+                            <label for="email">Email</label>
+                            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">Email is required.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" id="phone" [(ngModel)]="employee.phone" name="phone" required class="form-control" #phone="ngModel" />
+                            <label for="phone">Phone</label>
+                            <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="text-danger">Phone is required.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" id="address" [(ngModel)]="employee.address" name="address" required class="form-control" #address="ngModel" />
+                            <label for="address">Address</label>
+                            <div *ngIf="address.invalid && (address.dirty || address.touched)" class="text-danger">Address is required.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- City, State, ZIP Code -->
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" id="city" [(ngModel)]="employee.city" name="city" required class="form-control" #city="ngModel" />
+                            <label for="city">City</label>
+                            <div *ngIf="city.invalid && (city.dirty || city.touched)" class="text-danger">City is required.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" id="state" [(ngModel)]="employee.state" name="state" class="form-control" />
+                            <label for="state">State</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" id="zip" [(ngModel)]="employee.zip" name="zip" required class="form-control" #zip="ngModel" />
+                            <label for="zip">ZIP Code</label>
+                            <div *ngIf="zip.invalid && (zip.dirty || zip.touched)" class="text-danger">ZIP code is required.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-4 w-100">{{ index !== null ? 'Update' : 'Create' }}</button>
+            </form>
+        </div>
+    </div>
+</div>

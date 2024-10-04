@@ -1,0 +1,20 @@
+/* src/app/employee-list/employee-list.component.css */
+.container {
+    margin-top: 20px;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    text-align: center;
+}
+
+.btn {
+    margin: 5px;
+}
+
+h2 {
+    color: #007bff; /* Bootstrap primary color for visibility */
+}
