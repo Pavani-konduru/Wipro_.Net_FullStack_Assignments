@@ -1,0 +1,94 @@
+﻿@model EmployeeManagement.Models.Employee
+
+@{
+    ViewData["Title"] = "Create Employee";
+}
+
+<h2>Create Employee</h2>
+
+@using (Html.BeginForm("Create", "Employee", FormMethod.Post))
+{
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", required = "required", @id = "firstName" })
+                @Html.LabelFor(model => model.FirstName, new { @for = "firstName" })
+                @Html.ValidationMessageFor(model => model.FirstName, null, new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.MiddleName, new { @class = "form-control", @id = "middleName" })
+                @Html.LabelFor(model => model.MiddleName, new { @for = "middleName" })
+                @Html.ValidationMessageFor(model => model.MiddleName, null, new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.LastName, new { @class = "form-control", required = "required", @id = "lastName" })
+                @Html.LabelFor(model => model.LastName, new { @for = "lastName" })
+                @Html.ValidationMessageFor(model => model.LastName, null, new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.Salary, new { @class = "form-control", required = "required", type = "number", @id = "salary" })
+                @Html.LabelFor(model => model.Salary, new { @for = "salary" })
+                @Html.ValidationMessageFor(model => model.Salary, null, new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control", required = "required", @id = "phone" })
+                @Html.LabelFor(model => model.PhoneNumber, new { @for = "phone" })
+                @Html.ValidationMessageFor(model => model.PhoneNumber, null, new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", required = "required", type = "email", @id = "email" })
+                @Html.LabelFor(model => model.Email, new { @for = "email" })
+                @Html.ValidationMessageFor(model => model.Email, null, new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.Address, new { @class = "form-control", required = "required", @id = "address" })
+                @Html.LabelFor(model => model.Address, new { @for = "address" })
+                @Html.ValidationMessageFor(model => model.Address, null, new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.Country, new { @class = "form-control", required = "required", @id = "country" })
+                @Html.LabelFor(model => model.Country, new { @for = "country" })
+                @Html.ValidationMessageFor(model => model.Country, null, new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.Age, new { @class = "form-control", required = "required", type = "number", @id = "age" })
+                @Html.LabelFor(model => model.Age, new { @for = "age" })
+                @Html.ValidationMessageFor(model => model.Age, null, new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.DateOfBirth, new { @class = "form-control", required = "required", type = "date", @id = "dob" })
+                @Html.LabelFor(model => model.DateOfBirth, new { @for = "dob" })
+                @Html.ValidationMessageFor(model => model.DateOfBirth, null, new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+}

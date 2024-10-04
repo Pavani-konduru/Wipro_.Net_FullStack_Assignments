@@ -1,0 +1,50 @@
+﻿@model IEnumerable<EmployeeManagement.Models.Employee>
+
+@{
+    ViewData["Title"] = "Employee List";
+}
+
+<h2>Employee List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Salary</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+            <th>Country</th>
+            <th>Age</th>
+            <th>Date of Birth</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var employee in Model)
+            {
+                <tr>
+                    <td>@employee.FirstName</td>
+                    <td>@employee.MiddleName</td>
+                    <td>@employee.LastName</td>
+                    <td>@employee.Salary</td>
+                    <td>@employee.Email</td>
+                    <td>@employee.PhoneNumber</td>
+                    <td>@employee.Address</td>
+                    <td>@employee.Country</td>
+                    <td>@employee.Age</td>
+                    <td>@employee.DateOfBirth.ToShortDateString()</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="10" class="text-center">No employees found.</td>
+            </tr>
+        }
+    </tbody>
+</table>
