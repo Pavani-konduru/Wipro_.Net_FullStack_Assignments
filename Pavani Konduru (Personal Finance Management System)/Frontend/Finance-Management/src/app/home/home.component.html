@@ -1,0 +1,78 @@
+
+
+
+    <div class="content-wrapper">
+      <div class="row">
+        <div class="col-md-12 grid-margin">
+          <div class="row">
+            <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+              <h3 class="font-weight-bold">Welcome {{name | uppercase}} | {{accountNumber}}</h3>
+              <h6 class="font-weight-normal mb-0">Access and manage your Transactions Efficiently!.</h6>
+            </div>
+         
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-people mt-auto">
+              <div>
+                <canvas id="myChart" width="400" height="200"></canvas>
+
+                
+              </div>
+           
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 grid-margin transparent" >
+          <div class="">
+            <div class="col-md-6 mb-4 stretch-card transparent" style="width:100%">
+              <div class="card card-light-success" >
+               
+                <div class="card-body">
+
+                  <div class="row">
+                    <div class="col-2"><br><img src = "https://thumbs.dreamstime.com/b/four-rising-arrows-different-shades-blue-black-symbolizing-growth-progress-upward-trends-dark-blue-arrow-334977327.jpg" width="70px"></div>
+                    <div class="col-8">
+
+                      <p class="mb-4">Current Balance</p>
+                  <p class="fs-30 mb-2"><b>{{ balance | currency:'INR' }}</b></p>
+                  <p>Total Current Balance</p>
+
+                    </div>
+                  </div>
+                  
+
+                  
+                </div>
+              </div>
+            </div>
+         
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+              <div class="card card-light-blue">
+                <div class="card-body">
+                  <p class="mb-4">Credit</p>
+                  <p class="fs-30 mb-2">{{ credit | currency:'INR' }}</p>
+                  <p>Total Amount Received</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 stretch-card transparent">
+              <div class="card card-light-danger">
+                <div class="card-body">
+                  <p class="mb-4">Debit</p>
+                  <p class="fs-30 mb-2">{{ debit | currency:'INR' }}</p>
+                  <p>Total Amount Sent</p>
+                </div>
+              </div>
+            </div>
+
+          
+          </div>
+        </div>
+      </div>
+    </div>

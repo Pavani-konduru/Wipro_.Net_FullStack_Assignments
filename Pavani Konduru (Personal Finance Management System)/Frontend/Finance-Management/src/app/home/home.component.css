@@ -1,0 +1,10 @@
+.chart-container {
+    width: 80%;
+    margin: 40px auto;
+  }
+  
+  #stockChart {
+    width: 100%;
+    height: 290px;
+  }
+  

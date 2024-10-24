@@ -1,0 +1,140 @@
+<div class="content-wrapper">
+    <div class="row">
+        <div>
+            <div class="row">
+                <div class="">
+                    <h3 class="font-weight-bold">Wallet</h3>
+                    <h6 class="font-weight-normal mb-6">Add money to wallet account!.</h6><br>
+
+                  <div *ngIf="errorMessage != null">                
+                        <div  style="padding:20px;font-size:20px;background:white !important;color:green" [innerHTML]="errorMessage"></div>  <!-- Error message shown here -->
+                    </div>   
+
+                    <div class="row mt-3">
+                        
+                        <div class="col-md-7 ">
+                            <div class="">
+                                <div class="card-body">
+                                    <h4 class="card-title">Add Money to Wallet </h4><br>
+                                    <div class="">
+                                        <!-- Error message display -->
+
+                                        <form [formGroup]="RegisterForm" (ngSubmit)="onSubmit()">
+
+                                            <!-- Responsive Two-Column Layout -->
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <div class="form-floating">
+                                                        <input type="text" class="form-control" id="name"
+                                                            placeholder="Name" formControlName="name"
+                                                            [ngClass]="{'is-invalid': RegisterForm.get('name')?.invalid && RegisterForm.get('name')?.touched}"
+                                                            required />
+                                                        <label for="name">Name</label>
+                                                        <div *ngIf="RegisterForm.get('name')?.invalid && RegisterForm.get('name')?.touched"
+                                                            class="invalid-feedback">
+                                                            <small
+                                                                *ngIf="RegisterForm.get('name')?.errors?.['required']">Name
+                                                                is required.</small>
+                                                            <small
+                                                                *ngIf="RegisterForm.get('name')?.errors?.['minlength']">Please
+                                                                enter a valid Name.</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6 mb-3">
+                                                    <div class="form-floating">
+                                                        <input type="email" class="form-control" id="email"
+                                                            placeholder="email" formControlName="email"
+                                                            [ngClass]="{'is-invalid': RegisterForm.get('email')?.invalid && RegisterForm.get('email')?.touched}"
+                                                            required />
+                                                        <label for="email">Email</label>
+                                                        <div *ngIf="RegisterForm.get('email')?.invalid && RegisterForm.get('email')?.touched"
+                                                            class="invalid-feedback">
+                                                            <small
+                                                                *ngIf="RegisterForm.get('email')?.errors?.['required']">Email
+                                                                is required.</small>
+                                                            <small
+                                                                *ngIf="RegisterForm.get('email')?.errors?.['email']">Please
+                                                                enter a valid email address.</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-md-12 mb-3">
+                                                    <div class="form-floating">
+                                                        <input type="number" class="form-control" id="amount"
+                                                            placeholder="amount" formControlName="amount"
+                                                            [ngClass]="{'is-invalid': RegisterForm.get('amount')?.invalid && RegisterForm.get('amount')?.touched}"
+                                                            required />
+                                                        <label for="amount">Amount</label>
+                                                        <div *ngIf="RegisterForm.get('amount')?.invalid && RegisterForm.get('amount')?.touched"
+                                                            class="invalid-feedback">
+                                                            <small
+                                                                *ngIf="RegisterForm.get('amount')?.errors?.['required']">Amount
+                                                                is required.</small>
+                                                            <small
+                                                                *ngIf="RegisterForm.get('amount')?.errors?.['minlength']">Please
+                                                                enter a amount > 1.</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 mb-3">
+                                                    <div class="form-floating">
+                                                        <select class="form-control" id="payment"
+                                                            formControlName="payment"
+                                                            [ngClass]="{'is-invalid': RegisterForm.get('payment')?.invalid && RegisterForm.get('payment')?.touched}"
+                                                            required>
+                                                            <option value="">Select the Payment Option</option>
+                                                            <option value="Paymentgateway">Payment Gateway | Credit Card, Debit Card, UPI, Netbanking</option>
+                                                        </select>
+                                                        <label for="payment">Payment Option</label>
+                                                        <div *ngIf="RegisterForm.get('payment')?.invalid && RegisterForm.get('payment')?.touched"
+                                                            class="invalid-feedback">
+                                                            <small
+                                                                *ngIf="RegisterForm.get('payment')?.errors?.['required']">Payment
+                                                                option is required.</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-primary w-100"
+                                                [disabled]="RegisterForm.invalid || isLoading">
+                                                <span *ngIf="isLoading" class="spinner-border spinner-border-sm"
+                                                    role="status" aria-hidden="true"></span>
+                                                <span *ngIf="!isLoading">Update Account</span>
+                                                <span *ngIf="isLoading"> Loading...</span>
+                                            </button>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5  grid-margin grid-margin-md-0 stretch-card">
+                            <div class="card">
+                                <div class="card-body text-center"
+                                    style="display: grid;padding: 1.25rem 1.25rem;align-items: center;align-content: center;">
+                                    <div>
+                                        <img src="assets/wallet.png" class="img-lg rounded-circle mb-2"
+                                            alt="profile image">
+                                    <h3><b>{{ balance | currency:'INR' }}</b></h3>
+                                        <p class="text-muted mb-0"><span style="color: #0163ff;">Account Number:
+                                                {{accountNumber}}</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br> <br> <br>
+    <br> <br> <br>
+</div>
